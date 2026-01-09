@@ -41,3 +41,8 @@ After that, run powershell in `\Modules\` directory and write the command:
 
 ```powershell
 Import-Module CreatorFiles
+```
+
+## License
+
+This project is open source and available under the MIT License.
