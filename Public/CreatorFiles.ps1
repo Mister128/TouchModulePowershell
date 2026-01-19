@@ -17,7 +17,7 @@ function Touch {
         Forces the command to update timestamps even if the file already exists. Without -Force, shows warning for existing files.
 
     .PARAMETER Path
-        
+        Specifies the directory path where the file(s) will be created.
     
     .EXAMPLE
         Touch "newfile.txt"
@@ -45,7 +45,7 @@ function Touch {
     
     .NOTES
         Created by: Alexey Kudryakov (Mister Y)
-        Version: 1.0
+        Version: 1.1
     #>
     
     [CmdletBinding()]
@@ -61,44 +61,37 @@ function Touch {
     
     begin {
         Write-Verbose "Creating file(s)"
+        if (-not $Path) {
+            $Path = '.'
+        }
     }
 
     process {
-        if (-not $Path) {
-            $Path = '.'
+        function CreateFile($File) {
+            if (-not (Test-Path $File) -or $Force) {
+                New-Item "$Path\$File" -ItemType File -Force
+                Write-Verbose "Created: $File"
+            }
+            else {
+                Write-Warning "File $File already exists in this directory"
+                (Get-Item $File).LastWriteTime = Get-Date # if exist, only rewrite date
+            }
         }
 
         foreach ($File in $Name) {
             if ($Count) {
-                # create many files
                 for ($i = 1; $i -le $Count; $i++) {
                     $NumberedFile = "($i)$File"
-                    # check exists
-                    if (-not (Test-Path $NumberedFile) -or $Force) {
-                        New-Item "$Path\$NumberedFile" -ItemType File -Force
-                        Write-Verbose "Created: $NumberedFile"
-                    } else {
-                        # if not exist, only rewrite date
-                        Write-Warning "File $NumberedFile already exists in this directory"
-                        (Get-Item $NumberedFile).LastWriteTime = Get-Date
-                    }
+                    CreateFile($NumberedFile) # create many files
                 }
             }
             else {
-                # create 1 file
-                if (-not (Test-Path $File) -or $Force) {
-                    New-Item "$Path\$File" -ItemType File -Force
-                    Write-Verbose "Created: $File"
-                } else {
-                    # if not exist, only rewrite date
-                    Write-Warning "File $File already exists in this directory"
-                    (Get-Item $File).LastWriteTime = Get-Date
-                }
+                CreateFile($File) # create 1 file
             }
         }
     }
 
     end {
-        Write-Verbose "Operation completed successfully"
+        Write-Verbose "Creating finish successfully"
     }
 }
