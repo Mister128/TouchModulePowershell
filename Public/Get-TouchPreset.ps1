@@ -5,6 +5,7 @@ function Get-TouchPreset {
 
     .EXAMPLE
         Get-TouchPreset
+    
     .EXAMPLE
         Get-TouchPreset -Name web-project
     #>

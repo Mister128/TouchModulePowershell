@@ -7,7 +7,7 @@ function Initialize-TestEnvironment {
     $env:CREATORFILES_PRESETS_PATH = $script:tempPresetsFolder
 }
 
-function Remove-TestEnvironment {
+function Clear-TestEnvironment {
     Remove-Module CreatorFiles -Force -ErrorAction SilentlyContinue
     Remove-Item env:CREATORFILES_PRESETS_PATH -ErrorAction SilentlyContinue
 }

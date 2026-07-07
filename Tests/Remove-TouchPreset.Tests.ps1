@@ -4,7 +4,7 @@ BeforeAll {
 }
 
 AfterAll {
-    Remove-TestEnvironment
+    Clear-TestEnvironment
 }
 
 Describe 'Remove-TouchPreset' {
