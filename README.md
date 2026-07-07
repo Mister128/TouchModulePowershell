@@ -10,7 +10,7 @@
 
 **PowerShell module that extends the Unix `touch` command with reusable file presets.**
 
-[Installation](#-installation) • [Quick Start](#-quick-start) • [Documentation](#-available-commands)
+[Installation](#installation) • [Quick Start](#quick-start) • [Documentation](#available-commands)
 
 </div>
 
