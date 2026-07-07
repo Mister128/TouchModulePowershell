@@ -25,7 +25,7 @@ Describe 'Get-TouchPreset' {
     }
 
     It 'Writes error for unknown preset' {
-        Get-TouchPreset -Name 'ghost' -ErrorAction Stop | Should -Throw '*not found*' 
+        { Get-TouchPreset -Name 'ghost' -ErrorAction Stop } | Should -Throw '*not found*' 
     }
 
     It 'Returns preset with correct Files array' {
