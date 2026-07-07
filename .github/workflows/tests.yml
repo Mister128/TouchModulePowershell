@@ -12,7 +12,7 @@ jobs:
     runs-on: windows-latest
     
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install Pester
         shell: pwsh
@@ -30,8 +30,8 @@ jobs:
           Invoke-Pester -Configuration $config
       
       - name: Upload Results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: always()
         with:
-          name: test-results
+          name: test-results-${{ github.run_id }}
           path: test-results.xml
