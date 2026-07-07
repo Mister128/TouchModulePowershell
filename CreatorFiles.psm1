@@ -1,3 +1,14 @@
-. "$PSScriptRoot\Public\CreatorFiles.ps1"
+# Автоматическая загрузка всех функций
+$Public  = @(Get-ChildItem -Path "$PSScriptRoot\Public\*.ps1"  -ErrorAction SilentlyContinue)
+$Private = @(Get-ChildItem -Path "$PSScriptRoot\Private\*.ps1" -ErrorAction SilentlyContinue)
 
-Export-ModuleMember -Function Touch
+foreach ($file in @($Public + $Private)) {
+    try {
+        . $file.FullName
+    }
+    catch {
+        Write-Error "Failed to load function $($file.FullName): $_"
+    }
+}
+
+Export-ModuleMember -Function $Public.BaseName
