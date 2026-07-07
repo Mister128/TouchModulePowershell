@@ -21,8 +21,7 @@ Describe 'Remove-TouchPreset' {
     }
 
     It 'Errors on unknown preset' {
-        $err = Remove-TouchPreset -Name 'nope' -Confirm:$false 2>&1
-        $err | Should -Not -BeNullOrEmpty
+        Remove-TouchPreset -Name 'nope' -Confirm:$false -ErrorAction Stop | Should -Throw '*not found*'
     }
 
     It 'Does not remove other presets' {

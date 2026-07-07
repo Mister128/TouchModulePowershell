@@ -1,7 +1,7 @@
 BeforeAll {
     . "$PSScriptRoot\Shared\Setup.ps1"
     Initialize-TestEnvironment
-    
+
     Save-TouchPreset -Name 'alpha' -Files 'a.txt' | Out-Null
     Save-TouchPreset -Name 'beta'  -Files 'b.txt' -Count 5 | Out-Null
 }
@@ -25,8 +25,7 @@ Describe 'Get-TouchPreset' {
     }
 
     It 'Writes error for unknown preset' {
-        $err = Get-TouchPreset -Name 'ghost' 2>&1
-        $err | Should -Not -BeNullOrEmpty
+        Get-TouchPreset -Name 'ghost' -ErrorAction Stop | Should -Throw '*not found*' 
     }
 
     It 'Returns preset with correct Files array' {
