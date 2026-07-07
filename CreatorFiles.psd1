@@ -1,6 +1,6 @@
 @{
     RootModule        = 'CreatorFiles.psm1'
-    ModuleVersion     = '2.1.0'
+    ModuleVersion     = '2.1.1'
     GUID              = '6a5ca6c3-19bc-412d-83e3-1ca666591caf'
     Author            = 'MisterY'
     CompanyName       = 'Community'
