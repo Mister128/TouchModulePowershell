@@ -3,6 +3,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 [![PowerShell 5.1+](https://img.shields.io/badge/PowerShell-5.1%2B-blue?style=for-the-badge)](https://github.com/PowerShell/PowerShell)
 
+[![PowerShell Gallery](https://img.shields.io/powershellgallery/v/CreatorFiles.svg)](https://www.powershellgallery.com/packages/CreatorFiles/2.1.0)
+[![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/CreatorFiles.svg)](https://www.powershellgallery.com/packages/CreatorFiles)
+
 [![Tests](https://github.com/Mister128/TouchModulePowershell/actions/workflows/tests.yml/badge.svg?style=for-the-badge)](https://github.com/Mister128/TouchModulePowershell)
 
 This module used for creating file(s) and if you want, many similar files (`(1)text.txt, (2)text.txt, ...`)
