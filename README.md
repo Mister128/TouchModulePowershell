@@ -5,7 +5,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PowerShell 5.1+](https://img.shields.io/badge/PowerShell-5.1%2B-blue)](https://github.com/PowerShell/PowerShell)
-[![PowerShell Gallery](https://img.shields.io/powershellgallery/v/CreatorFiles.svg)](https://www.powershellgallery.com/packages/CreatorFiles/2.1.0)
+[![PowerShell Gallery](https://img.shields.io/powershellgallery/v/CreatorFiles.svg)](https://www.powershellgallery.com/packages/CreatorFiles)
 [![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/CreatorFiles.svg)](https://www.powershellgallery.com/packages/CreatorFiles)
 
 **PowerShell module that extends the Unix `touch` command with reusable file presets.**
