@@ -7,6 +7,7 @@
 [![PowerShell 5.1+](https://img.shields.io/badge/PowerShell-5.1%2B-blue)](https://github.com/PowerShell/PowerShell)
 [![PowerShell Gallery](https://img.shields.io/powershellgallery/v/CreatorFiles.svg)](https://www.powershellgallery.com/packages/CreatorFiles)
 [![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/CreatorFiles.svg)](https://www.powershellgallery.com/packages/CreatorFiles)
+[![CI](https://github.com/Mister128/TouchModulePowershell/actions/workflows/tests.yml/badge.svg)](https://github.com/Mister128/TouchModulePowershell/actions)
 
 **PowerShell module that extends the Unix `touch` command with reusable file presets.**
 
